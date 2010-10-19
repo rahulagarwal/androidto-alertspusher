@@ -1,0 +1,104 @@
+*{ margin:0; padding:0; }
+html, body{height:100%;} 
+html,body {margin:0;padding:0;height: 100%; }
+
+#outer{
+    position: relative; 
+    min-height:100%;
+}
+
+#dialog{
+	display: none;
+}
+
+#main-shell { 
+	position: relative;
+    margin: 0 auto; 
+    padding: 50px;
+    width: 1050px; 
+
+}
+
+#header { 
+    padding: 20px 0 30px; 
+    position: relative; 
+	height:44px;
+  	background-color:#fff;
+}
+
+
+body {
+	font-size:13px;
+	font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+}
+	
+	
+#error { 
+    padding: 20px 20px 20px; 
+    position: relative;
+    color:#ff0000;
+    text-align:center;
+}
+
+
+	
+#footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100px;
+	background: #87A800;	
+}
+#footer-inner{
+	clear: both;
+	margin: 0 auto;
+	margin-top: 20px;
+	height: 70px;
+	width: 1050px;
+	color: #f2f2f2;
+	text-align: right;
+	font-size: 10px;
+}
+
+#footer-inner a{
+	color: #fff;
+}
+
+label,  h2 {
+
+	float: left;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	font: 1.1em Gill Sans, Verdana, Geneva, sans-serif;
+	color: #A6C91E;
+}
+
+h1 {
+    font: 2.5em Gill Sans, Verdana, Geneva, sans-serif;
+}
+
+h3 {
+
+	margin-left: 100px;
+	font: 1.5em Gill Sans, Verdana, Geneva, sans-serif;
+	color: #A6C91E;
+}
+
+input, select {
+	-moz-border-radius:0.4em;
+	-khtml-border-radius:0.4em;
+	padding: 15px;
+    margin-top: 10px;
+	width: auto;
+	height: auto;
+	border:1px solid #ddd;
+	background:#fafafa;
+	font:bold 0.95em arial, sans-serif;
+
+}
+
+input:hover, input:focus {
+	border-color:#c5c5c5;
+	background: #F4F4F4;
+} 
