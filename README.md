@@ -10,7 +10,7 @@ Here are the default django settings used in the project:
     DATABASE_NAME = 'alertspusher'
     DATABASE_USER = 'root'
 
-You can overwrite these with your preferred settings in the settings.py file.
+You can overwrite these with your preferred settings in the settings.py file. If using mysql, you will need to create a new database called 'alertspusher' or whatever database name you choose for the DATABASE_NAME setting.
 
 ## C2DM Configs
 Add the following line to your settings.py file:
@@ -26,6 +26,10 @@ You can retrieve the ClientLogin token for your push account via cURL:
 Replace ACCOUNT and PASSWORD with the relevant information. Copy everything in the response following Auth= to get your AUTH_TOKEN value.
 
 ## Usage
+To setup the database and sync the models:
+
+    python manage.py syncdb
+
 To run the django development server:
 
     python manage.py runserver
@@ -35,4 +39,6 @@ To push an alert go to the following URL:
 
     http://127.0.0.1:8000/alertspusher/alert
 
+The app stores all the registered devices in a model. You can manage this model using the django admin interface at:
 
+    http://127.0.0.1:8000/admin
