@@ -97,7 +97,7 @@ class AndroidDevice(models.Model):
             print 'C2DM UrlError: ', error
             return False
         except Exception, error:
-            print 'C2DM Error: ' error
+            print 'C2DM Error: ', error
             return False 
 
     def __unicode__(self):
