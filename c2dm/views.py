@@ -55,7 +55,10 @@ def sendAlert(request):
     else:
         all_devices = AndroidDevice.objects.filter()
         for device in all_devices:
-            device.send_message(alert=message)
+            sent = device.send_message(alert=message)
+            if sent == False:
+                return render_to_response('alert.html', {'error_message':'Error Sending message to Device- %s'% device.device_id}, context_instance=RequestContext(request))
+
             
     return render_to_response('alertsent.html', {'last_message': message}, context_instance=RequestContext(request))
         

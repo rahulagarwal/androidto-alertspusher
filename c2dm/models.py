@@ -75,6 +75,8 @@ class AndroidDevice(models.Model):
             'Authorization': 'GoogleLogin auth=%s' % settings.C2DM_AUTH_TOKEN,
         }
 
+        print 'C2DM Trying to send message to devcice %s' % self.device_id
+
         try:
             params = urllib.urlencode(values)
             request = urllib2.Request(C2DM_URL, params, headers)
@@ -91,9 +93,11 @@ class AndroidDevice(models.Model):
                     self.save()
 
                 raise Exception(result[1])
-        except URLError:
+        except URLError, error:
+            print 'C2DM UrlError: ', error
             return False
         except Exception, error:
+            print 'C2DM Error: ' error
             return False 
 
     def __unicode__(self):
