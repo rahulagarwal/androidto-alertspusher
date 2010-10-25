@@ -125,4 +125,4 @@ def registration_completed_callback(sender, **kwargs):
     '''
     profile = kwargs['instance']
     profile.send_message(alert = 'Registration successful', result = '1')
-post_save.connect(registration_completed_callback, sender = AndroidDevice)
+#post_save.connect(registration_completed_callback, sender = AndroidDevice)
