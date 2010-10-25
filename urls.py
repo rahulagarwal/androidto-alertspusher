@@ -8,6 +8,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^alertspusher/', include('alertspusher.c2dm.urls')),
     (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    (r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/accounts/login/'}),
+    (r'^accounts/profile/$', 'alertspusher.c2dm.views.alert'),
 )
 
 urlpatterns += patterns('',

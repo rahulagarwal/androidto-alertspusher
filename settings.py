@@ -4,6 +4,8 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+SITE_ID = 1
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )

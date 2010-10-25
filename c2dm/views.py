@@ -3,6 +3,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from alertspusher.c2dm.models import AndroidDevice
 from django.shortcuts import render_to_response, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     return HttpResponse("Hello, Android. You're at the Registration index.")
@@ -44,10 +46,12 @@ def unregister(request, device_id):
         print "Device to unregister not found: ", device_id
     
     return HttpResponse("Successfully UNREGISTERED the device - %s" % device_id)
-    
+
+@login_required(redirect_field_name='redirect_to')
 def alert(request):
      return render_to_response('alert.html', {}, context_instance=RequestContext(request))
-        
+
+@login_required(redirect_field_name='redirect_to')
 def sendAlert(request):
     message = request.POST['message']
     if message is None or len(str(message)) == 0:
